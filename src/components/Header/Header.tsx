@@ -2,11 +2,11 @@ import React, { Component, useContext } from 'react';
 import styles from '../Calendar/CalendarDark.module.scss';
 import { ThemeContext } from '../../context'; // Импорт контекста
 
-interface HeaderProps {
+interface IHeaderProps {
    currentMonthName: string;
 }
 
-export class Header extends Component<HeaderProps> {
+export class Header extends Component<IHeaderProps> {
    render() {
       const { currentMonthName } = this.props;
       return (

@@ -3,7 +3,7 @@ import styles from '../Calendar/CalendarDark.module.scss';
 import { DayOfMonth } from '../DayOfMonth/DayOfMonth';
 
 
-interface MonthProps {
+interface IMonthProps {
    daysOfWeek: Array<string>;
    daysArray: Array<number>;
    activeDay: number | undefined;
@@ -11,7 +11,7 @@ interface MonthProps {
    handleDateClick: (day: number) => void;
 }
 
-export class Month extends Component<MonthProps> {
+export class Month extends Component<IMonthProps> {
    render() {
       const { daysArray, activeDay, today, handleDateClick, daysOfWeek } = this.props;
       return (

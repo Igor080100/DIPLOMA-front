@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from '../Calendar/CalendarDark.module.scss';
 
-interface WeekDayProps {
+interface IWeekDayProps {
    day: string;
 }
 
-export class WeekDay extends React.Component<WeekDayProps> {
+export class WeekDay extends React.Component<IWeekDayProps> {
    render() {
       return (
          <div className={`${styles.dayOfWeek}`}>

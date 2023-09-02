@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../Calendar/CalendarDark.module.scss';
 
-interface DayOfMonthProps {
+interface IDayOfMonthProps {
    day: number;
    active: boolean;
    today: number;
@@ -9,7 +9,7 @@ interface DayOfMonthProps {
 }
 
 
-export class DayOfMonth extends React.Component<DayOfMonthProps> {
+export class DayOfMonth extends React.Component<IDayOfMonthProps> {
    render() {
       const { day, active, today, onClick } = this.props;
       return (
