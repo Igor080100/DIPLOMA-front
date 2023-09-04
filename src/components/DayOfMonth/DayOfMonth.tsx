@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import styles from '../Calendar/CalendarDark.module.scss';
 
 interface IDayOfMonthProps {
@@ -8,16 +8,16 @@ interface IDayOfMonthProps {
    onClick: () => void;
 }
 
-
-export class DayOfMonth extends React.Component<IDayOfMonthProps> {
-   render() {
-      const { day, active, today, onClick } = this.props;
-      return (
-         <div
-            className={`${styles.day} ${active ? styles.active : ''} ${day === today ? styles.today : ''}`}
-            onClick={onClick}
-         >{day}</div>
-      )
-   }
-
+const DayOfMonth: FC<IDayOfMonthProps> = (props) => {
+   const { day, active, today, onClick } = props;
+   return (
+      <div
+         className={`${styles.day} ${active ? styles.active : ''} ${day === today ? styles.today : ''}`}
+         onClick={onClick}
+      >
+         {day}
+      </div>
+   );
 }
+
+export default DayOfMonth;

@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import styles from '../Calendar/CalendarDark.module.scss';
-import { DayOfMonth } from '../DayOfMonth/DayOfMonth';
-
+import DayOfMonth from '../DayOfMonth/DayOfMonth';
 
 interface IMonthProps {
    daysOfWeek: Array<string>;
@@ -11,23 +10,23 @@ interface IMonthProps {
    handleDateClick: (day: number) => void;
 }
 
-export class Month extends Component<IMonthProps> {
-   render() {
-      const { daysArray, activeDay, today, handleDateClick, daysOfWeek } = this.props;
-      return (
-         <div className={`${styles.calendar__days}`}>
-            {daysOfWeek.map(day =>
-               <div>{day}</div >)}
-            {daysArray.map(day => (
-               <DayOfMonth
-                  key={day}
-                  day={day}
-                  active={activeDay === day}
-                  today={today}
-                  onClick={() => handleDateClick(day)}
-               />
-            ))}
-         </div>
-      );
-   }
+const Month: FC<IMonthProps> = (props) => {
+   return (
+      <div className={`${styles.calendar__days}`}>
+         {props.daysOfWeek.map((day, index) => (
+            <div key={index}>{day}</div>
+         ))}
+         {props.daysArray.map((day) => (
+            <DayOfMonth
+               key={day}
+               day={day}
+               active={props.activeDay === day}
+               today={props.today}
+               onClick={() => props.handleDateClick(day)}
+            />
+         ))}
+      </div>
+   );
 }
+
+export default Month;
