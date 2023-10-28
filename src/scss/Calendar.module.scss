@@ -1,0 +1,214 @@
+$bg-color: rgb(54, 54, 54);
+$bg-active: rgb(0, 238, 255);
+$bg-active2: rgb(88, 88, 88);
+$text-color: rgb(255, 255, 255);
+$text-color2: black;
+$text-color3: rgb(88, 88, 88);
+
+.container {
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar {
+  margin: 0 auto;
+  background-color: black;
+  color: $text-color;
+  padding: 1.25rem;
+  border: 1px solid $bg-active;
+
+  &__nav {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+
+    .navBtnPrev {
+      background-color: aqua;
+      padding: 10px;
+      border: none;
+      border-left: 5px solid rgb(255, 255, 255);
+      font-weight: 600;
+    }
+    .navBtnPrev:hover {
+      border-left: 5px solid rgb(255, 153, 0);
+    }
+    .navBtnPrev:active {
+      border-left: 5px solid rgb(255, 153, 0);
+      background-color: rgb(0, 192, 192);
+    }
+
+    .navBtnNext {
+      background-color: aqua;
+      padding: 10px;
+      border: none;
+      border-right: 5px solid rgb(255, 255, 255);
+      font-weight: 600;
+    }
+    .navBtnNext:hover {
+      border-right: 5px solid rgb(255, 153, 0);
+    }
+    .navBtnNext:active {
+      border-right: 5px solid rgb(255, 153, 0);
+      background-color: rgb(0, 192, 192);
+    }
+  }
+
+  &__time {
+    font-size: 75px;
+    margin: 0;
+    color: #000000;
+    text-shadow: 3px 3px 0px rgb(255, 255, 255);
+    font-weight: 600;
+ 
+  }
+
+  &__date {
+    color: $bg-active;
+  }
+
+
+
+  &__days {
+      height: 375px;
+    .daysBox{
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      padding: 10px;
+    }
+
+    .dayOfWeek {
+      padding: 8px;
+      background-color: $bg-color;
+    }
+
+    .day {
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.2s ease-out;
+      border: solid #ffffff00;
+      box-sizing: border-box;
+    }
+
+    .day:hover {
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      border: solid #ffffff;
+      box-shadow: 0px 0px 75px 5px;
+      box-sizing: border-box;
+    }
+
+    .inactive {
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.2s ease-out;
+      box-sizing: border-box;
+      color: $text-color3;
+    }
+
+    .active {
+      border: 3px solid $bg-active;
+    }
+
+    .today {
+      background-color: $bg-active;
+      color: $text-color2;
+    }
+
+    .hasTasks {
+      border: 3px solid rgb(255, 153, 0);
+    }
+
+    .completedTask {
+      text-decoration: line-through;
+      color: #000000;
+    }
+  }
+
+  &__todo {
+
+    .todoInput {
+      padding: 15px;
+      border: none;
+    }
+
+    .todoBtn {
+      background-color: aqua;
+      padding: 15px;
+      border: none;
+      font-weight: 600;
+      transition: 0.5s;
+    }
+
+    .todoBtn:active {
+      background-color: rgb(0, 192, 192);
+      padding: 15px;
+      border: none;
+    }
+
+    .taskList {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+
+      .changeTasks{
+        margin: 13px;
+
+        .changeInput{
+          padding: 10px;
+          border: none;
+        }
+  
+        .changeBtn{
+          background-color: rgb(255, 153, 0);
+          border: none;
+          padding: 10px;
+        }
+      }
+
+      .tasks {
+        display: flex;
+        justify-content: end;
+        align-items:start;
+        margin: 13px;
+
+        .task {
+          max-width: 190px;
+          margin: 0;
+          word-wrap: break-word; 
+          border: 2px solid rgb(255, 153, 0);
+          border-radius: 10px 0 0 10px;
+          padding: 5px;
+        }
+
+        .btnOne {
+          background-color: rgb(182, 0, 0);
+          border: none;
+          padding: 10px;
+          font-weight: 600;
+          color: #ffffff;
+        }
+        .btnOne:active {
+          background-color: rgb(134, 0, 0);
+        }
+
+        .btnTwo {
+          background-color: rgb(255, 153, 0);
+          border: none;
+          padding: 10px;
+        }
+        
+        .btnTwo:active {
+          background-color: rgb(163, 98, 0);
+
+        }
+      }
+    }
+  }
+}
